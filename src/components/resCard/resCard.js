@@ -2,7 +2,7 @@ export const ResCard = () => {
 	return (
 		<div class="component-display-container flex-items">
 			<div class="component-display-container card-change lt">
-				<a href="#" class="nav-bold-link">
+				<a href="/" class="nav-bold-link">
 					<i class="fa fa-arrow-left" aria-hidden="true"></i>
 				</a>
 			</div>
@@ -13,7 +13,7 @@ export const ResCard = () => {
 				></img>
 			</div>
 			<div class="component-display-container card-change rt">
-				<a href="#" class="nav-bold-link">
+				<a href="/" class="nav-bold-link">
 					<i class="fa fa-arrow-right" aria-hidden="true"></i>
 				</a>
 			</div>

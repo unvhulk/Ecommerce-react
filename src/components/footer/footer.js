@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-export const Footer = (props) => {
-	const { image } = props;
+export const Footer = () => {
 	return (
 		<footer class="footer">
 			<div class="footer-content">
@@ -8,7 +7,7 @@ export const Footer = (props) => {
 					<Link to="/">
 						<img
 							class="footer-logo"
-							src="	https://xero-ecomm.netlify.app/assets/logo.png"
+							src="https://xero-ecomm.netlify.app/assets/logo.png"
 							alt="logo"
 						></img>
 					</Link>

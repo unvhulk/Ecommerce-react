@@ -8,7 +8,7 @@ export const ProductCard = (props) => {
 				<div className="card-margin">
 					<img
 						src="https://xero-ecomm.netlify.app/assets/cp1.jpg"
-						alt="card-image"
+						alt="card-img"
 					/>
 				</div>
 				<div className="inside-container">

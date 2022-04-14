@@ -17,7 +17,7 @@ export const Home = () => {
 						<Card title={users.author} image={users.image} />
 					))}
 				</div>
-				<Footer image={data.data.image} />
+				<Footer />
 			</main>
 		</div>
 	);

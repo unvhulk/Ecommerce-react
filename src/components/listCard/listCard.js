@@ -5,7 +5,7 @@ export const ListCard = (props) => {
 			<div className="parent-positioning image-with-margin">
 				<img
 					src="https://xero-ecomm.netlify.app/assets/cp1.jpg"
-					alt="card-image"
+					alt="card-img"
 				></img>
 				<div className="inside-container">
 					<h3 className="child-positioning">{title}</h3>
