@@ -1,0 +1,11 @@
+.overlay-text {
+	position: absolute;
+	width: 100%;
+	top: 15rem;
+	left: 0;
+	background-color: var(--COLOR-SOCIAL-ICON);
+	color: var(--COLOR-BLACK);
+	padding: 1rem 1rem 1rem 1rem;
+	border-radius: 4px;
+	text-align: center;
+}

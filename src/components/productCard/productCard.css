@@ -1,43 +1,39 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
-@import url("./screens/cart/cart.css");
-@import url("./screens/login/login.css");
-@import url("./screens/products/products.css");
-@import url("./screens/signup/signup.css");
-@import url("./screens/wishlist/wishlist.css");
-:root {
-	--COLOR-PRIMARY: #01ccff;
-	--COLOR-SECONDARY: #27e4b5;
-	--COLOR-SOCIAL-ICON: #308ea5;
-	--PRIMARY-HOVER: #7a9ea7;
-	--NOTIFICATION-COLOR: #7cf916;
-	--offgreen: #bacfc0;
-	--darkerofseconadary: #2195d8;
-	--BOX-SHADOW: #af9898;
-	--BOX-SHADOW-LIGHTER: #4e4c25;
-	--ALERT-PRIMARY-COLOR: #2563eb;
-	--ALERT-SUCCESS-COLOR: #0de01f;
-	--ALERT-ERROR-COLOR: #e72222;
-	--ALERT-WARNING-COLOR: #f8cb03;
-	--COLOR-WHITE: #ffffff;
-	--LINK: #3c83f6;
-	--LINK-HOVER: #2563eb;
-	--COLOR-BLACK: #0e0d0d;
-	--ONLINE-BADGE: #1c852f;
-	--DND-BADGE: #ff0000;
-	--OFFLINE-BADGE: #707070;
-	--BACKGROUND-BODY-COLOR: #333d3f;
-	--BACKGROUND-BODY-COLOR-DARK: #0f1b1d;
-	--secondary-txt: #808080;
-	font-size: 62.5%;
+.position-fixed {
+	width: 20rem;
+	box-shadow: 0px 2px 1rem 2px var(--BOX-SHADOW);
+	padding: 1rem;
 }
-body {
-	font-family: Georgia, "Times New Roman", Times, serif;
-	font-size: 1.6rem;
-	background-color: VAR(--BACKGROUND-BODY-COLOR);
-	color: var(--COLOR-WHITE);
+.sidebar-flex {
+	display: flex;
+	flex-direction: column;
+	row-gap: 2rem;
+	flex: 0 0 auto;
 }
-#root {
-	position: relative;
+.sidebar-header {
+	display: flex;
+	column-gap: 2rem;
+	justify-content: space-between;
+}
+.filter {
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+	margin: 10px 2rem 0 0;
+}
+.margin {
+	margin: 10px 2rem 0 0;
+	cursor: pointer;
+}
+.full-width {
+	width: 100%;
+	height: fit-content;
+}
+.slider {
+	display: flex;
+	flex-direction: row;
+}
+.slider-lt {
+	margin-right: auto;
 }
 .component-display-container {
 	padding: 1.5rem;
@@ -61,7 +57,6 @@ body {
 .card-shadow:hover {
 	transform: scale(1.02);
 }
-
 .input {
 	padding: 0 1rem;
 	border-radius: 2px 0 0 2px;
@@ -126,8 +121,6 @@ body {
 	margin: 10px auto;
 	background-color: var(--secondary-text);
 	color: var(--secondary-text);
-	position: absolute;
-	bottom: -10rem;
 }
 .footer-logo {
 	height: 8rem;
@@ -157,15 +150,4 @@ body {
 }
 .card-margin {
 	margin: 8px 0 0 8px;
-}
-.home {
-	flex-wrap: nowrap;
-	overflow-x: auto;
-	justify-content: flex-start;
-}
-.grid-items {
-	display: grid;
-	grid-template-columns: auto auto auto auto auto auto;
-	row-gap: 10px;
-	margin-top: 10px;
 }
