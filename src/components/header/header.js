@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export const Header = () => {
 	return (
 		<nav className="component-display-container nav-bar">
@@ -8,11 +9,11 @@ export const Header = () => {
 						src="https://xero-ecomm.netlify.app/assets/logo.png"
 						alt="logo"
 					></img>
-					<a className="component-library-link nav-icons" href="/">
+					<Link className="component-library-link nav-icons" to="/">
 						<i className="fa" aria-hidden="true">
 							Xero
 						</i>
-					</a>
+					</Link>
 				</div>
 				<div className="search-bar">
 					<input className="input" placeholder="Search for products..."></input>
@@ -24,31 +25,31 @@ export const Header = () => {
 				<ul className="nav-flex">
 					<div className="badge-wrapper">
 						<li className="list-style">
-							<a className="link" href="/login">
+							<Link className="link" to="/login">
 								<i className="fa nav-icons" aria-hidden="true">
 									Login
 								</i>
-							</a>
+							</Link>
 						</li>
 					</div>
 
 					<div className="badge-wrapper">
 						<li className="list-style">
-							<a className="link" href="/wishlist">
+							<Link className="link" to="/wishlist">
 								<i className="fa fa-heart nav-icons" aria-hidden="true"></i>
 								<div className="badge icon">5</div>
-							</a>
+							</Link>
 						</li>
 					</div>
 					<div className="badge-wrapper">
 						<li className="list-style">
-							<a className="link" href="/cart">
+							<Link className="link" to="/cart">
 								<i
 									className="fa fa-shopping-cart nav-icons"
 									aria-hidden="true"
 								></i>
 								<div className="badge icon">5</div>
-							</a>
+							</Link>
 						</li>
 					</div>
 				</ul>
