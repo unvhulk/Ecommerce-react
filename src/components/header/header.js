@@ -1,6 +1,4 @@
-import { useState } from "react";
 export const Header = () => {
-	const { cartItems, setCartItems } = useState(0);
 	return (
 		<nav className="component-display-container nav-bar">
 			<div className="nav-container">
@@ -49,7 +47,7 @@ export const Header = () => {
 									className="fa fa-shopping-cart nav-icons"
 									aria-hidden="true"
 								></i>
-								<div className="badge icon">{cartItems}</div>
+								<div className="badge icon">5</div>
 							</a>
 						</li>
 					</div>

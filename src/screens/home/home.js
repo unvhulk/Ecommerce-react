@@ -1,6 +1,4 @@
 import { Header, Footer, ListCard, ResCard, Card } from "../../components";
-
-import React, { useState, useEffect } from "react";
 import data from "../../assets/data.json";
 
 export const Home = () => {

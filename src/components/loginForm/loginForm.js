@@ -12,9 +12,10 @@ export const LoginForm = (props) => {
 		else setFormInfo({ ...formInfo, [event.target.type]: !formInfo.checkbox });
 		console.log(formInfo);
 	};
-	const verifyForm = () => {
+	const verifyForm = (event) => {
 		let error = false;
 		if (formInfo.email === "" || formInfo.password === "") {
+			event.preventDefault();
 			error = true;
 			alert("Please Fill All The Fields");
 		}
@@ -69,8 +70,8 @@ export const LoginForm = (props) => {
 						</div>
 						<button
 							className="button form-btn"
-							// type="submit"
-							onClick={() => verifyForm()}
+							type="submit"
+							onSubmit={verifyForm}
 						>
 							Login
 						</button>

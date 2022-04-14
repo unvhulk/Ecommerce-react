@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
 export const Card = (props) => {
-	const { title, image } = props;
+	const { image } = props;
 	const navigate = useNavigate();
 	return (
 		<div class="card-container card-shadow">
 			<div class="parent-positioning">
 				<div class="card-margin">
-					<img src={image} alt="card-image"></img>
+					<img src={image} alt="card-img"></img>
 				</div>
 				<div class="inside-container">
 					<h3>God Of War</h3>
