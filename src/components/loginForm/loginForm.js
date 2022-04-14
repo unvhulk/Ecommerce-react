@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 export const LoginForm = (props) => {
 	const { onSubmit } = props;
 	const [formInfo, setFormInfo] = useState({
@@ -75,9 +76,9 @@ export const LoginForm = (props) => {
 						>
 							Login
 						</button>
-						<a className="btn-sec" href="/signup">
+						<Link className="btn-sec" to="/signup">
 							<span className="secondary-txt">Create an account &gt;</span>
-						</a>
+						</Link>
 					</form>
 				</div>
 			</div>

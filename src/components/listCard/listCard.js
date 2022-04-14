@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 export const ListCard = (props) => {
 	const { title } = props;
 	return (
-		<a className="link card-container" href="/products">
+		<Link className="link card-container" to="/products">
 			<div className="parent-positioning image-with-margin">
 				<img
 					src="https://xero-ecomm.netlify.app/assets/cp1.jpg"
@@ -12,6 +13,6 @@ export const ListCard = (props) => {
 					<span className="overlay-text">Availble on PS4</span>
 				</div>
 			</div>
-		</a>
+		</Link>
 	);
 };

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export const SignupForm = () => {
 	return (
 		<div className="component-display-container cart-items flex-items">
@@ -36,9 +37,9 @@ export const SignupForm = () => {
 					<button className="button form-btn" type="submit">
 						Signup
 					</button>
-					<a className="btn-sec" href="/login">
+					<Link className="btn-sec" to="/login">
 						<span className="secondary-txt">Already have an account &gt;</span>
-					</a>
+					</Link>
 				</form>
 			</div>
 		</div>
