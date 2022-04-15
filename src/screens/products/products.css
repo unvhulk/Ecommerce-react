@@ -1,0 +1,37 @@
+.position-fixed {
+	width: 20rem;
+	box-shadow: 0px 2px 1rem 2px var(--BOX-SHADOW);
+	padding: 1rem;
+}
+.sidebar-flex {
+	display: flex;
+	flex-direction: column;
+	row-gap: 2rem;
+	flex: 0 0 auto;
+}
+.sidebar-header {
+	display: flex;
+	column-gap: 2rem;
+	justify-content: space-between;
+}
+.filter {
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+	margin: 10px 2rem 0 0;
+}
+.margin {
+	margin: 10px 2rem 0 0;
+	cursor: pointer;
+}
+.full-width {
+	width: 100%;
+	height: fit-content;
+}
+.slider {
+	display: flex;
+	flex-direction: row;
+}
+.slider-lt {
+	margin-right: auto;
+}
