@@ -1,65 +1,33 @@
-.forget-pass {
-	gap: 1rem;
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-}
-.forget-txt {
-	align-self: flex-end;
-	border: none;
-	cursor: pointer;
-	font-size: 1.5rem;
-	color: var(--LINK);
-	text-decoration: none;
-	margin-right: 1rem;
-}
-.form-btn {
-	align-self: center;
+.login-form {
+	display: grid;
+	grid-template-rows: 25% 75%;
+	background-color: var(--BACKGROUND-BODY-COLOR);
+	height: 40rem;
+	width: 40rem;
+	border-radius: 2rem;
 }
 .input-form {
-	height: 30rem;
-	font-size: 2rem;
-}
-.form-con {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: fit-content;
-	gap: 2rem;
-	padding: 2rem 4rem 4rem 4rem;
-	border-radius: 10px;
-	border: 1px solid var(--COLOR-BLACK);
-}
-.email-input {
-	gap: 2rem;
-}
-.password {
-	gap: 2rem;
-}
-.btn-con {
-	margin-top: 10px;
-}
-.btn-sec {
-	color: var(--LINK);
-	border: none;
-	text-decoration: none;
-	width: max-content;
-	align-self: center;
-}
-.secondary-txt {
-	color: var(--COLOR-BLACK);
-}
-.btn-sec:hover {
-	cursor: pointer;
-}
-.input-form {
-	border-radius: 0;
 	background-color: var(--BACKGROUND-BODY-COLOR);
 }
-.form-input-box {
-	border-radius: 5px;
+.input-email {
+	display: grid;
+	grid-template-rows: auto;
 }
-.main-container.form {
-	height: 58rem;
+.input-password {
+	display: grid;
+	grid-template-rows: auto;
+}
+.btn-container {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+}
+.btn-sec {
+	display: grid;
+	grid-template-columns: 20% 60% 20%;
+}
+.secondary-txt {
+	grid-column: 2/3;
+	text-align: center;
+	color: beige;
 }

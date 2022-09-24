@@ -11,5 +11,5 @@
 	color: var(--ALERT-ERROR-COLOR);
 }
 .main-container.wish {
-	height: auto;
+	min-height: 69vh;
 }

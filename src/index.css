@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 @import url("./screens/cart/cart.css");
-@import url("./screens/login/login.css");
 @import url("./screens/products/products.css");
 @import url("./screens/signup/signup.css");
 @import url("./screens/wishlist/wishlist.css");
+@import url("./components/header/header.css");
 :root {
 	--COLOR-PRIMARY: #01ccff;
 	--COLOR-SECONDARY: #27e4b5;
@@ -30,11 +30,26 @@
 	--secondary-txt: #808080;
 	font-size: 62.5%;
 }
+[data-theme="light"] {
+	--BACKGROUND-BODY-COLOR: #97e1f3;
+	/* --secondary-color: #818cab; */
+	/* --font-color: #e1e1ff; */
+	--COLOR-WHITE: #161625;
+	/* --COLOR-BLACK: #ffffff */
+	/* --heading-color: #818cab; */
+	--BACKGROUND-BODY-COLOR-DARK: #ffffff;
+}
 body {
-	font-family: Georgia, "Times New Roman", Times, serif;
+	font-family: system-ui;
 	font-size: 1.6rem;
 	background-color: VAR(--BACKGROUND-BODY-COLOR);
 	color: var(--COLOR-WHITE);
+}
+.component-display-container.nav-bar {
+	background-color: var(--BACKGROUND-BODY-COLOR);
+	position: sticky;
+	top: 0;
+	z-index: 2;
 }
 #root {
 	position: relative;
@@ -54,6 +69,9 @@ body {
 	position: absolute;
 	padding-bottom: 10px;
 	padding-top: 0%;
+}
+.card-container {
+	max-width: 18rem;
 }
 .card-container:hover {
 	transform: scale(1.05) rotate(2deg);
@@ -165,7 +183,21 @@ body {
 }
 .grid-items {
 	display: grid;
-	grid-template-columns: auto auto auto auto auto auto;
+	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 	row-gap: 10px;
 	margin-top: 10px;
+}
+.icon-overlay {
+	background-color: white;
+}
+.icon-overlay:hover {
+	color: var(--ALERT-ERROR-COLOR);
+	font-weight: 900;
+}
+.prod {
+	min-width: 18rem;
+	width: 100%;
+}
+.prod .inside-container {
+	width: 17.6rem;
 }

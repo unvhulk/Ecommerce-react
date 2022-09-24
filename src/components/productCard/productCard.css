@@ -150,4 +150,5 @@
 }
 .card-margin {
 	margin: 8px 0 0 8px;
+	object-fit: contain;
 }

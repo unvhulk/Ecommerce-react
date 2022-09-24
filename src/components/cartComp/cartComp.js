@@ -1,66 +1,98 @@
-export const CartComp = () => {
+import { useNavigate } from "react-router-dom";
+import { useCart, useWishlist } from "contexts";
+import { useState } from "react";
+export const CartComp = ({ product }) => {
+	const [productState, setProductState] = useState(product);
+	const { updateCartQty, removeFromCart } = useCart();
+	const { addToWishlist, wishlistItems } = useWishlist();
+	const navigate = useNavigate();
+
+	const inWishlist = wishlistItems
+		? wishlistItems.findIndex((p) => p._id === product._id) === -1
+			? false
+			: true
+		: false;
+
+	const moveToWishlistHandler = (e) => {
+		if (!inWishlist) {
+			addToWishlist(product);
+			e.target.innerText = "Go to Wishlist";
+			e.target.style.backgroundColor = "palegreen";
+			e.target.style.color = "black";
+		} else {
+			navigate("/wishlist");
+		}
+	};
+
 	return (
-		<div className="component-display-container cart-items vertical-cards">
-			<div className="cart-header">
-				<h1 className="fa" aria-hidden="true">
-					My Cart
-				</h1>
-			</div>
-			<div className="flex-items">
-				<div className="cart-comp">
-					<img src="https://xero-ecomm.netlify.app/assets/cp1.jpg" alt="img" />
-					<div className="cart-des">
-						<h2 className="prd-title fa" aria-hidden="true">
-							{" "}
-							God Of War{" "}
-						</h2>
-						<p className="card-item-cost">Rs.3299</p>
-						<p className="card-item-cost txt-strike-through txt-secondary">
-							Rs.3999
-						</p>
-						<button className="btn btn-prm">Remove from Cart</button>
-						<button className="btn btn-secc">Move To Wishlist</button>
-						<div className="cart-qty-con">
-							<label htmlFor="quantity">Quantity:</label>
-							<select name="quantity" id="quantity">
-								<option value={1} selected>
-									1
-								</option>
-								<option value={2}>2</option>
-								<option value={3}>3</option>
-								<option value={4}>4</option>
-								<option value={5}>5</option>
-							</select>
-							<button className="trash-btn">
-								<i className="fa fa-trash-o" aria-hidden="true" />
-							</button>
+		<div className='flex-items'>
+			<div className='cart-comp'>
+				<img src={productState.image} alt='img' />
+				<div className='cart-des'>
+					<h2 className='prd-title ' aria-hidden='true'>
+						{productState.title}
+					</h2>
+					<p className='card-item-cost'>Rs.{productState.price}</p>
+					<p className='card-item-cost txt-strike-through txt-secondary'>
+						{`Rs. ${499 + Number(productState.price)}`}
+					</p>
+					<button
+						className='btn btn-prm'
+						onClick={() => removeFromCart(product)}>
+						Remove from Cart
+					</button>
+					<button
+						className='btn btn-secc'
+						onClick={moveToWishlistHandler}
+						style={{
+							backgroundColor: `${inWishlist ? "palegreen" : ""}`,
+							color: `${inWishlist ? "black" : ""}`,
+						}}>
+						{inWishlist ? "Go to Wishlist" : "Move To Wishlist"}
+					</button>
+					<div className='cart-qty-con'>
+						<label htmlFor='quantity'>Quantity:</label>
+						<div name='quantity' id='quantity'>
+							<div className='number'>
+								<span
+									className='minus'
+									id='minus'
+									onClick={(e) => {
+										setProductState({
+											...productState,
+											cartQty:
+												productState.cartQty === 1
+													? 1
+													: productState.cartQty - 1,
+										});
+										updateCartQty(productState, productState.cartQty - 1);
+									}}>
+									-
+								</span>
+								<input
+									type='text'
+									value={productState.cartQty}
+									onChange={(e) => {
+										setProductState({
+											...productState,
+											cartQty: e.target.value,
+										});
+										updateCartQty(productState, e.target.value);
+									}}></input>
+								<span
+									className='plus'
+									id='plus'
+									onClick={(e) => {
+										setProductState({
+											...productState,
+											cartQty: productState.cartQty + 1,
+										});
+										updateCartQty(productState, productState.cartQty + 1);
+									}}>
+									+
+								</span>
+							</div>
 						</div>
-					</div>
-				</div>
-				<div className="checkout-container">
-					<div className="checkout">
-						<h3 className="checkout-title">Checkout</h3>
-						<hr />
-						<div className="checkout-des">
-							<p>Price (1 item)</p>
-							<p className="checkout-des-price">$3999</p>
-						</div>
-						<div className="checkout-des">
-							<p>Discount</p>
-							<p className="checkout-des-price">-$700</p>
-						</div>
-						<div className="checkout-des">
-							<p>Delivery Charges</p>
-							<p className="checkout-des-price">$49</p>
-						</div>
-						<hr />
-						<div className="checkout-des">
-							<h3>TOTAL</h3>
-							<h3 className="checkout-des-price">$3250</h3>
-						</div>
-						<hr />
-						<p>You will save $749 on this order</p>
-						<button className="checkout-btn">PLACE ORDER</button>
 					</div>
 				</div>
 			</div>

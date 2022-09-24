@@ -1,0 +1,24 @@
+.Signup-form-con {
+	display: grid;
+	grid-template-rows: 15% 85%;
+	height: 58rem;
+	width: 40rem;
+	background-color: var(--BACKGROUND-BODY-COLOR);
+}
+.input-form {
+	height: 100%;
+}
+.input-form > input {
+	width: 36rem;
+}
+.signup-fields {
+	display: grid;
+	grid-template-rows: auto;
+}
+.error-msg {
+	padding: 5px 0 0 0;
+	margin: 0;
+	font-size: small;
+	font-weight: 600;
+	color: red;
+}

@@ -1,12 +1,9 @@
-import { Header, Footer, SignupForm } from "../../components";
+import { SignupForm } from "../../components";
 
 export const Signup = () => {
 	return (
 		<>
-			{" "}
-			<Header />
 			<SignupForm />
-			<Footer />
 		</>
 	);
 };

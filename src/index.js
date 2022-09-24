@@ -1,30 +1,37 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
+import ReactDOM from "react-dom/client";
+import "index.css";
+import { App } from "App";
 import {
-	Home,
-	Login,
-	Profile,
-	Signup,
-	Products,
-	Cart,
-	Wishlist,
-} from "./screens";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+	CartProvider,
+	ThemeProvider,
+	AuthProvider,
+	SearchProvider,
+} from "contexts";
 
-ReactDOM.render(
+import { BrowserRouter } from "react-router-dom";
+import { makeServer } from "server";
+import { WishlistProvider } from "contexts/wishlist-context";
+import { FilterProvider } from "contexts/filter-context";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+makeServer();
+root.render(
 	<React.StrictMode>
 		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/login" element={<Login />} />
-				<Route path="/signup" element={<Signup />} />
-				<Route path="/profile" element={<Profile />} />
-				<Route path="/products" element={<Products />} />
-				<Route path="/cart" element={<Cart />} />
-				<Route path="/wishlist" element={<Wishlist />} />
-			</Routes>
+			<AuthProvider>
+				<ThemeProvider>
+					<WishlistProvider>
+						<CartProvider>
+							<FilterProvider>
+								<SearchProvider>
+									<App />
+								</SearchProvider>
+							</FilterProvider>
+						</CartProvider>
+					</WishlistProvider>
+				</ThemeProvider>
+			</AuthProvider>
 		</BrowserRouter>
-	</React.StrictMode>,
-	document.getElementById("root")
+	</React.StrictMode>
 );
