@@ -23,10 +23,11 @@
 	align-items: center;
 	grid-template-columns: repeat(4, 1fr);
 }
-.badge-container {
+.badge-container > a {
 	display: grid;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 }
 .badge-icon {
 	display: grid;
@@ -39,14 +40,18 @@
 	width: 1.7rem;
 }
 .wishlist {
+	grid-column: 2/3;
+	grid-row: 1/2;
 	position: absolute;
-	top: 1rem;
-	right: 11.5rem;
+	top: -0.7rem;
+	left: -0.7rem;
 }
 .cart {
+	grid-column: 2/3;
+	grid-row: 1/2;
 	position: absolute;
-	top: 1rem;
-	right: 2.5rem;
+	top: -0.7rem;
+	left: -0.7rem;
 }
 .link {
 	color: var(--COLOR-PRIMARY);
