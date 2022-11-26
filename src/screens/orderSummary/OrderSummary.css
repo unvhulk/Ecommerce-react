@@ -1,0 +1,101 @@
+.order-container {
+	display: grid;
+	grid-template-columns: 1fr;
+	background-color: var(--BACKGROUND-BODY-COLOR-DARK);
+	padding: 0 2rem 2rem 2rem;
+}
+
+.order-summary-header {
+	display: grid;
+	justify-content: center;
+	padding: 2rem 2rem;
+	margin: 1rem 2rem;
+	border: 2px solid var(--COLOR-WHITE);
+	border-radius: 2rem;
+	font-size: xx-large;
+}
+.order-header {
+	grid-row: 1/2;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 2rem;
+	margin: 1rem 2rem;
+	border: 2px solid var(--COLOR-WHITE);
+	border-radius: 2rem;
+	font-size: larger;
+	background-color: var(--ALERT-SUCCESS-COLOR);
+}
+
+.order-amt {
+	display: grid;
+	justify-self: end;
+}
+.order-list {
+	display: grid;
+	grid-template-rows: repeat(auto-fill, 13rem);
+	grid-template-columns: repeat(auto-fill, 60rem);
+	justify-content: center;
+	align-items: center;
+}
+.checkout-container.order {
+	grid-column: 2/3;
+	grid-row: 1/3;
+	display: grid;
+	align-items: center;
+	padding-top: 5px;
+	top: 8rem;
+}
+.checkout.order {
+	gap: 0;
+	border-radius: 2rem;
+}
+.address-container {
+	grid-column: 1/2;
+	display: grid;
+}
+.address-header {
+	display: grid;
+	justify-content: center;
+}
+.address-manager {
+	display: grid;
+}
+.add-address {
+	display: grid;
+	justify-self: center;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--COLOR-PRIMARY);
+	width: 30%;
+	padding: 1rem;
+	font-size: medium;
+	border-radius: 2rem;
+}
+.add-address:hover {
+	cursor: pointer;
+	background-color: var(--COLOR-SECONDARY);
+}
+.address-list {
+	display: grid;
+	grid-template-rows: repeat(auto-fill, 20rem);
+}
+.payment-btn {
+	display: grid;
+	align-items: center;
+	background-color: var(--COLOR-PRIMARY);
+	border: none;
+	width: 35rem;
+	height: 5rem;
+	border-radius: 2rem;
+}
+.payment-btn:hover {
+	outline: 2px solid var(--COLOR-BLACK);
+	background-color: var(--COLOR-SECONDARY);
+}
+.btn-disabled {
+	pointer-events: none;
+	color: var(--secondary-txt);
+	background-color: var(--offgreen);
+}

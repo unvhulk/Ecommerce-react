@@ -1,10 +1,74 @@
-.App-header {
-	background-color: #1c4290;
-	min-height: 12vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.header {
+	grid-area: header;
+	display: grid;
+	grid-template-columns: 5% 65% 30%;
+	position: sticky;
+	top: 0;
+	z-index: 2;
+	box-shadow: 2px 0px 1rem var(--BOX-SHADOW);
+	background-color: var(--BACKGROUND-BODY-COLOR);
+}
+.nav-brand {
+	display: grid;
 	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: white;
+}
+.favicon {
+	display: grid;
+	align-items: center;
+}
+.nav-icons {
+	display: grid;
+	width: 37.5rem;
+	padding-left: 2rem;
+	align-items: center;
+	grid-template-columns: repeat(4, 1fr);
+}
+.badge-container {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+}
+.badge-icon {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--NOTIFICATION-COLOR);
+	color: var(--COLOR-BLACK);
+	font-size: small;
+	border-radius: 50%;
+	width: 1.7rem;
+}
+.wishlist {
+	position: absolute;
+	top: 1rem;
+	right: 11.5rem;
+}
+.cart {
+	position: absolute;
+	top: 1rem;
+	right: 2.5rem;
+}
+.link {
+	color: var(--COLOR-PRIMARY);
+}
+.link:hover {
+	color: var(--PRIMARY-HOVER);
+}
+.search-button {
+	background-color: var(--COLOR-PRIMARY);
+	width: 5rem;
+	height: 4.25rem;
+	border: 0;
+	border-radius: 0 2px 2px 0;
+}
+.search-button:hover {
+	cursor: pointer;
+	background-color: var(--PRIMARY-HOVER);
+}
+.pointer {
+	color: var(--COLOR-PRIMARY);
+}
+.pointer:hover {
+	cursor: pointer;
+	color: var(--PRIMARY-HOVER);
 }

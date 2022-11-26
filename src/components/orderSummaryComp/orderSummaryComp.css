@@ -1,0 +1,20 @@
+.order-comp {
+	display: grid;
+	background-color: var(--BACKGROUND-BODY-COLOR);
+	grid-template-columns: 12rem auto;
+	height: 12rem;
+	margin: 1rem;
+	border-radius: 2rem;
+	border: 1px solid var(--COLOR-WHITE);
+	background-color: var(--BACKGROUND-BODY-COLOR-DARK);
+}
+.order-comp > img {
+	border-radius: 2rem;
+	width: 80%;
+	height: 98%;
+}
+.order-desc {
+	display: flex;
+	flex-direction: column;
+	align-content: space-around;
+}

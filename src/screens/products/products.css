@@ -1,8 +1,14 @@
-.position-fixed {
-	width: 20rem;
-	box-shadow: 0px 2px 1rem 2px var(--BOX-SHADOW);
-	padding: 1rem;
+.products-container {
+	width: 100%;
+	background-color: var(--BACKGROUND-BODY-COLOR-DARK);
+	padding: 2rem;
 }
+.grid-items {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 25rem);
+	column-gap: 0;
+}
+
 .sidebar-flex {
 	display: flex;
 	flex-direction: column;
@@ -22,7 +28,13 @@
 }
 .margin {
 	margin: 10px 2rem 0 0;
+}
+p.margin {
+	margin: 12px 10px 0 0;
 	cursor: pointer;
+}
+p.margin:hover {
+	color: #01ccff;
 }
 .full-width {
 	width: 100%;

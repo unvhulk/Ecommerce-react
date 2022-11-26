@@ -2,14 +2,7 @@
 	width: 100%;
 	padding-bottom: 3rem;
 }
-.cart-header {
-	text-align: center;
-	width: inherit;
-	padding: 2rem;
-}
+
 .icon-overlay.wish {
 	color: var(--ALERT-ERROR-COLOR);
-}
-.main-container.wish {
-	height: auto;
 }

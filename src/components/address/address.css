@@ -1,0 +1,138 @@
+.address-management-container {
+	width: 100%;
+	position: relative;
+	display: grid;
+}
+.add-address-btn {
+	display: grid;
+	justify-self: self-end;
+	align-self: baseline;
+	background-color: var(--BACKGROUND-BODY-COLOR);
+	color: var(--COLOR-WHITE);
+	border-radius: 2rem;
+	padding: 1.5rem;
+	width: 100%;
+	margin-top: 1rem;
+	font-size: 1.7rem;
+	cursor: pointer;
+}
+.add-address-btn:hover {
+	color: var(--COLOR-BLACK);
+	background-color: var(--COLOR-SECONDARY);
+	transition: all ease-in-out 0.3s;
+}
+.add-address-dialog {
+	display: grid;
+	justify-self: center;
+	background-color: var(--BACKGROUND-BODY-COLOR);
+	border-radius: 2rem;
+	padding: 2rem;
+	width: 40%;
+	z-index: 2;
+	position: absolute;
+	top: 7rem;
+	outline: 2px solid var(--COLOR-WHITE);
+}
+.add-address-dialog > h2 {
+	display: grid;
+	justify-self: center;
+}
+
+.add-address-wrapper {
+	display: grid;
+	gap: 1rem;
+}
+.add-address-wrapper > input {
+	height: 4rem;
+	padding-left: 2rem;
+	font-size: medium;
+	box-shadow: 0 0 2px var(--COLOR-WHITE);
+	border: none;
+}
+.address-btn-container {
+	display: grid;
+	justify-content: center;
+	grid-template-columns: auto auto;
+}
+.address-btn-container > button {
+	display: grid;
+	justify-self: center;
+	align-content: center;
+	color: var(--COLOR-WHITE);
+	background-color: var(--COLOR-PRIMARY);
+}
+.address-primary {
+	width: 22rem;
+	height: 4rem;
+	border-radius: 2rem;
+}
+.address-primary:hover {
+	color: var(--COLOR-BLACK);
+	background-color: var(--PRIMARY-HOVER);
+	cursor: pointer;
+}
+.dummy-btn {
+	background-color: var(--COLOR-SECONDARY);
+	border-radius: 2rem;
+	height: 4rem;
+}
+.dummy-btn:hover {
+	color: var(--COLOR-WHITE);
+	background-color: var(--COLOR-SOCIAL-ICON);
+	cursor: pointer;
+}
+.hide-address {
+	display: none;
+}
+
+.address-list-container {
+	display: grid;
+	justify-self: center;
+	align-items: center;
+	width: 70rem;
+	border-radius: 2rem;
+	padding: 0 1rem 0 3rem;
+	margin: 1rem;
+	background-color: var(--BACKGROUND-BODY-COLOR);
+}
+.address-list-container:hover {
+	cursor: pointer;
+	outline: 2px solid var(--COLOR-SECONDARY);
+}
+.selected {
+	outline: 2px solid var(--NOTIFICATION-COLOR);
+}
+.address-list-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 23rem);
+	gap: 8rem;
+}
+.address-list-wrapper {
+	display: grid;
+	grid-template-rows: repeat(auto-fill, 1fr);
+	background-color: var(--BACKGROUND-BODY-COLOR);
+	border-radius: 2rem;
+	padding: 2rem;
+	margin: 2rem;
+	width: 28rem;
+	border: 1px solid var(--COLOR-WHITE);
+	height: 25rem;
+}
+.address-list-header {
+	display: grid;
+	justify-content: space-between;
+	grid-template-columns: 30% 30%;
+	grid-template-rows: auto;
+}
+.address-list-header > button {
+	background-color: var(--COLOR-PRIMARY);
+	color: var(--COLOR-BLACK);
+	height: 3rem;
+	border-radius: 2rem;
+	border: none;
+	cursor: pointer;
+}
+.address-list-header > button:hover {
+	color: var(--COLOR-WHITE);
+	outline: 2px solid var(--COLOR-BLACK);
+}
