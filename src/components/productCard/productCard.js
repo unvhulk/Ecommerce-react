@@ -89,7 +89,7 @@ export const ProductCard = ({ product }) => {
 					style={{
 						position: "absolute",
 						top: "18.7rem",
-						left: "17rem",
+						left: "15rem",
 						backgroundColor: `${
 							product.rating >= 4
 								? "green"

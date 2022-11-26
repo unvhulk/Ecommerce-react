@@ -3,7 +3,7 @@
 	grid-template-rows: 60% 25% 15%;
 	background-color: var(--BACKGROUND-BODY-COLOR);
 	margin: 5px;
-	width: 22rem;
+	width: 20rem;
 	height: 37rem;
 	border: 2px solid var(--COLOR-PRIMARY);
 	border-radius: 2rem;
