@@ -6,3 +6,4 @@ export * from "./products/products";
 export * from "./cart/cart";
 export * from "./wishlist/wishlist";
 export * from "./errorPage/ErrorPage";
+export * from "./orderSummary/OrderSummary";

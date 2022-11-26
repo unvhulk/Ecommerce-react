@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { ListCard, CarouselCard, ProductCard } from "components";
 import { useNavigate } from "react-router-dom";
 import { useFilter } from "contexts";
+import "./home.css";
 
 export const Home = () => {
 	const [data, setData] = useState({});
@@ -24,20 +25,28 @@ export const Home = () => {
 	return (
 		<div>
 			<main style={{ minHeight: "69vh" }}>
-				<div className='component-display-container home vertical-cards flex-items'>
-					{categories.categories?.map((product) => (
-						<ListCard
-							product={product}
-							key={product.id}
-							btnAction={() => handleCategorySelection(product.categoryName)}
-						/>
-					))}
-				</div>
 				<CarouselCard />
-				<div className='component-display-container home vertical-cards flex-items'>
-					{data.products?.map((product) => (
-						<ProductCard product={product} key={product.id} />
-					))}
+
+				<div className='categories-container'>
+					<h2 className='categories-header'>Popular Categories</h2>
+					<div className='categories-list'>
+						{categories.categories?.map((product) => (
+							<ListCard
+								product={product}
+								key={product.id}
+								btnAction={() => handleCategorySelection(product.categoryName)}
+							/>
+						))}
+					</div>
+				</div>
+
+				<div className='productCard-container'>
+					<h1 className='products-header'>Featured Products</h1>
+					<div className='products-list'>
+						{data.products?.slice(0, 5).map((product) => (
+							<ProductCard product={product} key={product.id} />
+						))}
+					</div>
 				</div>
 			</main>
 		</div>

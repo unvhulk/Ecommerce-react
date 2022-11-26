@@ -13,6 +13,9 @@ import { BrowserRouter } from "react-router-dom";
 import { makeServer } from "server";
 import { WishlistProvider } from "contexts/wishlist-context";
 import { FilterProvider } from "contexts/filter-context";
+import { ScrollToTop } from "components";
+import { AddressProvider } from "contexts/address-context";
+import { OrdersProvider } from "contexts/order-context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 makeServer();
@@ -23,11 +26,16 @@ root.render(
 				<ThemeProvider>
 					<WishlistProvider>
 						<CartProvider>
-							<FilterProvider>
-								<SearchProvider>
-									<App />
-								</SearchProvider>
-							</FilterProvider>
+							<AddressProvider>
+								<OrdersProvider>
+									<FilterProvider>
+										<SearchProvider>
+											<ScrollToTop />
+											<App />
+										</SearchProvider>
+									</FilterProvider>
+								</OrdersProvider>
+							</AddressProvider>
 						</CartProvider>
 					</WishlistProvider>
 				</ThemeProvider>

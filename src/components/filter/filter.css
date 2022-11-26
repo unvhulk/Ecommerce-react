@@ -1,6 +1,9 @@
+.filter-container {
+	box-shadow: 0px 0px 5px var(--COLOR-WHITE);
+	z-index: 1;
+}
 .position-fixed {
 	width: 20rem;
-	box-shadow: 0px 2px 1rem 2px var(--BOX-SHADOW);
 	padding: 1rem;
 }
 .sidebar-flex {

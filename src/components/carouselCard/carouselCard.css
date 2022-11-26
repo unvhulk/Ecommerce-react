@@ -1,0 +1,38 @@
+.carousel-card {
+	padding: 0;
+}
+.card-change {
+	box-shadow: none;
+	position: absolute;
+	background-color: var(--COLOR-PRIMARY);
+	border: 2px solid var(--BACKGROUND-BODY-COLOR-DARK);
+	border-radius: 2rem;
+	color: var(--BACKGROUND-BODY-COLOR-DARK);
+	cursor: pointer;
+}
+.rt {
+	top: 30rem;
+	right: 3rem;
+}
+.lt {
+	top: 30rem;
+	left: 3rem;
+}
+.card-change:hover {
+	transform: scale(1.1);
+}
+.shop-now {
+	position: absolute;
+	top: 50rem;
+	left: 55rem;
+	background-color: var(--COLOR-PRIMARY);
+	border: 2px solid var(--COLOR-BLACK);
+	border-radius: 2rem;
+	width: 16rem;
+	height: 6rem;
+	font-size: larger;
+	cursor: pointer;
+}
+.shop-now:hover {
+	transform: scale(1.1);
+}

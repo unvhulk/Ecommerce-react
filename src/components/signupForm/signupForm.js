@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useAuthContext } from "contexts";
 import { useEffect, useState } from "react";
 import "./signupForm.css";
+
 export const SignupForm = () => {
 	const [formInfo, setFormInfo] = useState({
 		firstName: "",
@@ -13,7 +14,7 @@ export const SignupForm = () => {
 	const [formErrors, setFormErrors] = useState({});
 	const { SignupHandler, error, setError } = useAuthContext();
 	const location = useLocation();
-	// console.log(location);
+
 	const handleChange = (event) => {
 		const { name, value } = event.target;
 		setFormInfo({ ...formInfo, [name]: value });
@@ -61,109 +62,86 @@ export const SignupForm = () => {
 	useEffect(() => {
 		setError("");
 	}, [location.pathname]);
-	return (
-		<div className='component-display-container cart-items flex-items'>
-			<div className='component-display-container Signup-form-con'>
-				<div className='cart-header'>
-					<h1 className='fa' aria-hidden='true'>
-						Signup
-					</h1>
-					<p className='error-msg'>{error?.errors}</p>
-				</div>
-				<form className='input-form' onSubmit={handleSubmit}>
-					<div className='signup-fields'>
-						<label className='fa' aria-hidden='true'>
-							firstName
-						</label>
-						<input
-							name='firstName'
-							type='firstName'
-							placeholder='First name'
-							className='form-input-box'
-							value={formInfo.firstName}
-							onChange={handleChange}
-							required
-						/>
-						<p className='error-msg'>{formErrors?.firstName}</p>
-					</div>
-					<div className='signup-fields'>
-						<label className='fa' aria-hidden='true'>
-							lastName
-						</label>
-						<input
-							name='lastName'
-							type='lastName'
-							placeholder='Last Name'
-							className='form-input-box'
-							value={formInfo.lastName}
-							onChange={handleChange}
-							required
-						/>
-						<p className='error-msg'>{formErrors?.lastName}</p>
-					</div>
-					<div className='signup-fields'>
-						<label htmlFor='email-input' className='fa' aria-hidden='true'>
-							email
-						</label>
-						<input
-							name='email'
-							type='email'
-							placeholder='john.doe@xyz.com'
-							className='form-input-box'
-							value={formInfo.email}
-							onChange={handleChange}
-							required
-						/>
-						<p className='error-msg'>{formErrors?.email}</p>
-					</div>
-					<div className='signup-fields'>
-						<label htmlFor='password' className='fa' aria-hidden='true'>
-							password
-						</label>
-						<input
-							name='password'
-							type='password'
-							minLength={8}
-							placeholder='************************'
-							className='form-input-box password'
-							value={formInfo.password}
-							onChange={handleChange}
-							autoComplete='none'
-							required
-						/>
-						<p className='error-msg'>{formErrors?.password}</p>
-					</div>
-					<div className='signup-fields'>
-						<label htmlFor='password' className='fa' aria-hidden='true'>
-							confirmPassword
-						</label>
-						<input
-							name='confirmPassword'
-							type='password'
-							minLength={8}
-							placeholder='************************'
-							className='form-input-box password'
-							value={formInfo.confirmPassword}
-							onChange={handleChange}
-							autoComplete='none'
-							required
-						/>
-						<p className='error-msg'>{formErrors?.confirmPassword}</p>
-					</div>
 
-					<div className='btn-container'>
-						<button className='button form-btn' type='submit'>
-							Signup
-						</button>
-					</div>
-					<Link
-						className='btn-sec'
-						to='/login'
-						state={{ from: location.state?.from }}>
-						<span className='secondary-txt'>Already have an account &gt;</span>
-					</Link>
-				</form>
+	return (
+		<div className='Signup-form-con'>
+			<div className='signup-header'>
+				<h1 aria-hidden='true'>SIGNUP</h1>
+				<p className='error-msg'>{error?.errors}</p>
 			</div>
+			<form className='input-form' onSubmit={handleSubmit}>
+				<div className='form-fields'>
+					<input
+						name='firstName'
+						type='firstName'
+						placeholder='First name'
+						value={formInfo.firstName}
+						onChange={handleChange}
+						required
+					/>
+					<p className='error-msg'>{formErrors?.firstName}</p>
+				</div>
+				<div className='form-fields'>
+					<input
+						name='lastName'
+						type='lastName'
+						placeholder='Last Name'
+						value={formInfo.lastName}
+						onChange={handleChange}
+						required
+					/>
+					<p className='error-msg'>{formErrors?.lastName}</p>
+				</div>
+				<div className='form-fields'>
+					<input
+						name='email'
+						type='email'
+						placeholder='Email'
+						value={formInfo.email}
+						onChange={handleChange}
+						required
+					/>
+					<p className='error-msg'>{formErrors?.email}</p>
+				</div>
+				<div className='form-fields'>
+					<input
+						name='password'
+						type='password'
+						minLength={8}
+						placeholder='Password'
+						value={formInfo.password}
+						onChange={handleChange}
+						autoComplete='none'
+						required
+					/>
+					<p className='error-msg'>{formErrors?.password}</p>
+				</div>
+				<div className='form-fields'>
+					<input
+						name='confirmPassword'
+						type='password'
+						minLength={8}
+						placeholder='Confirm Password'
+						value={formInfo.confirmPassword}
+						onChange={handleChange}
+						autoComplete='none'
+						required
+					/>
+					<p className='error-msg'>{formErrors?.confirmPassword}</p>
+				</div>
+
+				<div className='input-buttons'>
+					<button className='button button-login' type='submit'>
+						Signup
+					</button>
+				</div>
+				<Link
+					className='btn-sec'
+					to='/login'
+					state={{ from: location.state?.from }}>
+					<span className='secondary-txt'>Already have an account {"->"}</span>
+				</Link>
+			</form>
 		</div>
 	);
 };

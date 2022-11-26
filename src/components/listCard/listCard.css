@@ -1,0 +1,33 @@
+.list-card {
+	display: grid;
+	grid-template-rows: 80% 20%;
+	grid-template-columns: 1fr;
+	justify-content: center;
+	background-color: var(--BACKGROUND-BODY-COLOR);
+	margin: 10px 10px 10px 0;
+	border-radius: 10%;
+	width: 95%;
+}
+.list-card:hover {
+	cursor: pointer;
+	transform: scale(1.05);
+	box-shadow: 1px 0.5px 10px var(--BACKGROUND-BODY-COLOR);
+}
+.img-container {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+}
+.img-container > img {
+	min-width: 90%;
+	min-height: 90%;
+}
+.category-container {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0 0 2rem 2rem;
+	height: 5rem;
+	background-color: var(--COLOR-PRIMARY);
+	color: var(--COLOR-BLACK);
+}

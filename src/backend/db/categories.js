@@ -8,50 +8,55 @@ import { v4 as uuid } from "uuid";
 export const categories = [
 	{
 		_id: uuid(),
+		logo: "https://res.cloudinary.com/dark-ether/image/upload/v1669052215/Xero/Categories/swords_r4dhfn.svg",
 		rating: 4.5,
 		title: "God of War",
 		image:
-			"https://res.cloudinary.com/dark-ether/image/upload/c_scale,h_200,w_160/v1661270743/Xero/X3WIAh63yKhRRiMohLoJMeQu_kmnb3r.jpg",
+			"https://res.cloudinary.com/dark-ether/image/upload/v1669052215/Xero/Categories/swords_r4dhfn.svg",
 		author: "Santa Monica",
 		price: 5000,
 		categoryName: "Action",
 	},
 	{
 		_id: uuid(),
+		logo: "",
 		rating: 4.5,
 		title: "Elden Ring",
 		image:
-			"https://res.cloudinary.com/dark-ether/image/upload/c_scale,h_200,w_160/v1661267658/Xero/elden-ring-button-03-1623460560664_cvv3gw.jpg",
+			"https://res.cloudinary.com/dark-ether/image/upload/v1669052191/Xero/Categories/map_fcbuye.svg",
 		author: "FromSoftware",
 		price: 5000,
 		categoryName: "Adventure",
 	},
 	{
 		_id: uuid(),
+		logo: "",
 		rating: 4.5,
 		title: "Dying Light",
 		image:
-			"https://res.cloudinary.com/dark-ether/image/upload/c_scale,h_200,w_160/v1661267604/Xero/91DgfqdUA5L._SL1500__vau6xf.jpg",
+			"https://res.cloudinary.com/dark-ether/image/upload/v1669052212/Xero/Categories/skull_ssq7xj.svg",
 		author: "Techland",
 		price: 3000,
 		categoryName: "Horror",
 	},
 	{
 		_id: uuid(),
+		logo: "",
 		rating: 4.5,
 		title: "The Stanley Parable",
 		image:
-			"https://res.cloudinary.com/dark-ether/image/upload/c_scale,h_200,w_160/v1661269949/Xero/eQVuMWucUXgz0WZpFyQVjFQc_hxaan7.jpg",
+			"https://res.cloudinary.com/dark-ether/image/upload/v1669052200/Xero/Categories/puzzle_uqn9d1.svg",
 		author: "Davey Wreden and William Pugh",
 		price: 3000,
 		categoryName: "Puzzle",
 	},
 	{
 		_id: uuid(),
+		logo: "",
 		rating: 4.2,
 		title: "The Witcher 3: Wild Hunt",
 		image:
-			"https://res.cloudinary.com/dark-ether/image/upload/c_scale,h_200,w_160/v1661269386/Xero/TQKAd8U6hnIFQIIcz6qnFh8C_w946na.jpg",
+			"https://res.cloudinary.com/dark-ether/image/upload/v1669052208/Xero/Categories/shuriken_cwfogl.svg",
 		author: "CD Projekt Red",
 		price: 1000,
 		categoryName: "RPG",

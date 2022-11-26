@@ -1,0 +1,77 @@
+.cart-desc {
+	display: grid;
+	grid-template-rows: auto;
+}
+.cart-comp {
+	display: grid;
+	justify-self: center;
+	grid-template-columns: 20rem auto;
+	background-color: var(--BACKGROUND-BODY-COLOR);
+	border: 1px solid var(--COLOR-WHITE);
+	border-radius: 2rem;
+	grid-gap: 2rem;
+	padding: 2.5rem;
+	margin: 2.5rem 2rem;
+}
+.cart-comp img {
+	display: grid;
+	justify-self: center;
+	align-self: center;
+}
+.prd-title {
+	font-size: 2.5rem;
+	font-weight: 800;
+	font-family: "Poppins";
+}
+.btn {
+	cursor: pointer;
+	font-size: 1.7rem;
+	font-family: "Poppins";
+	width: 35%;
+	margin: 2px;
+	border-radius: 2rem;
+	font-weight: 500;
+}
+
+.btn-prm {
+	background: var(--ALERT-ERROR-COLOR);
+	border: none;
+}
+
+.btn-prm:hover {
+	background: var(--DND-BADGE);
+	color: var(--COLOR-WHITE);
+}
+
+.btn-secc {
+	background: var(--COLOR-PRIMARY);
+	border: none;
+	color: var(--COLOR-WHITE);
+}
+
+.btn-secc:hover {
+	background: var(--COLOR-SECONDARY);
+	color: var(--COLOR-BLACK);
+}
+
+.cart-qty-con {
+	display: grid;
+	width: 20rem;
+	grid-template-columns: 40% 45% 15%;
+	align-items: center;
+}
+
+.trash-btn {
+	font-size: 1.5rem;
+	padding: 8px;
+	cursor: pointer;
+	border: none;
+	background: none;
+	color: var(--ALERT-ERROR-COLOR);
+	transition: 0.2s;
+}
+
+.trash-btn:hover {
+	background: var(--ALERT-ERROR-COLOR);
+	color: var(--COLOR-WHITE);
+}

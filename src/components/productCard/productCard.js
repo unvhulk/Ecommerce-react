@@ -1,6 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuthContext, useCart, useWishlist } from "contexts";
 import { useState } from "react";
+import "./productCard.css";
 
 export const ProductCard = ({ product }) => {
 	const { addToCart, cartProducts } = useCart();
@@ -27,10 +28,11 @@ export const ProductCard = ({ product }) => {
 		if (Object.keys(user).length !== 0) {
 			if (e.target.innerText === "Go to Cart") {
 				navigate("/cart", { state: location });
+			} else {
+				await addToCart(product);
+				e.target.innerHTML =
+					"<h2 style='background-color: palegreen; border: 2px solid palegreen'>Go to Cart</h2>";
 			}
-			await addToCart(product);
-			e.target.innerText = "Go to Cart";
-			e.target.style.backgroundColor = "palegreen";
 		} else navigate("/login", { state: location });
 	};
 
@@ -51,62 +53,68 @@ export const ProductCard = ({ product }) => {
 	};
 
 	return (
-		<div className='card-container card-shadow'>
-			<div className='parent-positioning'>
-				<div className='card-margin'>
-					<img src={product.image} alt='card-img' />
-				</div>
-				<div className='prod inside-container '>
-					<h3
-						style={{
-							//style for title overflow
-							overflow: "hidden",
-							textOverflow: "ellipsis",
-							whiteSpace: "nowrap",
-						}}>
-						{product?.title}
-					</h3>
-					<span className='card-content'>Latest Arrival</span>
-					<p className='card-item-cost'>
-						{product.price === 0 ? "Free" : `Rs. ${product.price}`}
-					</p>
-					<button
-						className='button card-button'
-						onClick={cartHandler}
-						style={{ backgroundColor: `${inCart ? "palegreen" : "#01CCFF"}` }}>
-						{inCart ? "Go to Cart" : "Add to Cart"}
-					</button>
-					<span className='badge-overlay'>New</span>
-					<i
-						className='fa fa-heart-o icon-btn icon-size icon-overlay'
-						style={{
-							fontWeight: `${inWishlist ? "900" : ""}`,
-							color: `${inWishlist ? "red" : ""}`,
-						}}
-						aria-hidden='true'
-						onClick={wishlistHandler}></i>
-					<span
-						style={{
-							position: "absolute",
-							top: "17rem",
-							left: "13rem",
-							backgroundColor: `${
-								product.rating >= 4
-									? "green"
-									: product.rating >= 3
-									? "#ED9F3A"
-									: product.rating >= 2
-									? "#F45B19"
-									: "red"
-							}`,
-							borderRadius: "20%",
-							fontSize: "1.5rem",
-							padding: "0 2px",
-						}}>
-						{product.rating} <i className='fa fa-star'></i>
-					</span>
-				</div>
+		<div
+			className='product-card'
+			style={{
+				border: `2px solid ${inCart ? "palegreen" : "#01CCFF"}`,
+			}}>
+			<div className='card-img-container'>
+				<img src={product.image} alt='card-img' />
 			</div>
+			<div className='productCard-desc'>
+				<h3
+					style={{
+						//style for title overflow
+						overflow: "hidden",
+						textOverflow: "ellipsis",
+						whiteSpace: "nowrap",
+					}}>
+					{product?.title}
+				</h3>
+				<span className=''>Latest Arrival</span>
+				<div className=''>
+					{product.price === 0 ? "Free" : `Rs. ${product.price}`}
+				</div>
+
+				<span className='badge-overlay'>New</span>
+				<i
+					className='fa fa-heart-o icon-btn icon-size icon-overlay'
+					style={{
+						fontWeight: `${inWishlist ? "900" : ""}`,
+						color: `${inWishlist ? "red" : ""}`,
+					}}
+					aria-hidden='true'
+					onClick={wishlistHandler}></i>
+				<span
+					style={{
+						position: "absolute",
+						top: "18.7rem",
+						left: "17rem",
+						backgroundColor: `${
+							product.rating >= 4
+								? "green"
+								: product.rating >= 3
+								? "#ED9F3A"
+								: product.rating >= 2
+								? "#F45B19"
+								: "red"
+						}`,
+						borderRadius: "20%",
+						fontSize: "1.5rem",
+						padding: "0 2px",
+					}}>
+					{product.rating.toFixed(1)} <i className='fa fa-star'></i>
+				</span>
+			</div>
+			<button
+				className='product-btn'
+				onClick={cartHandler}
+				style={{
+					backgroundColor: `${inCart ? "palegreen" : "#01CCFF"}`,
+					border: `1px solid ${inCart ? "palegreen" : "#01CCFF"}`,
+				}}>
+				<h2>{inCart ? "Go to Cart" : "Add to Cart"}</h2>
+			</button>
 		</div>
 	);
 };

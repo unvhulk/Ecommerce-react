@@ -1,13 +1,14 @@
+.products-container {
+	width: 100%;
+	background-color: var(--BACKGROUND-BODY-COLOR-DARK);
+	padding: 2rem;
+}
 .grid-items {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, 18rem);
+	grid-template-columns: repeat(auto-fill, 25rem);
 	column-gap: 0;
 }
-.position-fixed {
-	width: 20rem;
-	box-shadow: 0px 2px 1rem 2px var(--BOX-SHADOW);
-	padding: 1rem;
-}
+
 .sidebar-flex {
 	display: flex;
 	flex-direction: column;

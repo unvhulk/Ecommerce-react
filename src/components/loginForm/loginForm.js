@@ -11,6 +11,7 @@ export const LoginForm = () => {
 	const [formErrors, setFormErrors] = useState({});
 	const { LoginHandler, error, setError } = useAuthContext();
 	const location = useLocation();
+
 	const handleChange = (event) => {
 		const { name, value } = event.target;
 		setFormInfo({ ...formInfo, [name]: value });
@@ -49,67 +50,53 @@ export const LoginForm = () => {
 	};
 
 	useEffect(() => setError(""), [location.pathname]);
-	return (
-		<main className='main-container form '>
-			<div className='component-display-container cart-items flex-items'>
-				<div className='component-display-container form-con login-form'>
-					<div className='cart-header'>
-						<h1 className='fa' aria-hidden='true'>
-							login
-						</h1>
-						<p className='error-msg'>{error?.errors}</p>
-					</div>
-					<form className='input-form' onSubmit={handleSubmit}>
-						<div className='input-email'>
-							<label htmlFor='email-input' className='fa' aria-hidden='true'>
-								email
-							</label>
-							<input
-								name='email'
-								type='email'
-								placeholder='john.doe@xyz.com'
-								className='form-input-box'
-								value={formInfo.email}
-								onChange={handleChange}
-								required
-							/>
-							<p className='error-msg'>{formErrors?.firstName}</p>
-						</div>
-						<div className='input-password'>
-							<label htmlFor='password' className='fa' aria-hidden='true'>
-								password
-							</label>
-							<input
-								name='password'
-								type='password'
-								minLength={8}
-								placeholder='************************'
-								className='form-input-box password'
-								value={formInfo.password}
-								onChange={handleChange}
-								autoComplete='none'
-								required
-							/>
-							<p className='error-msg'>{formErrors?.firstName}</p>
-						</div>
 
-						<div className='btn-container'>
-							<button className='button form-btn' type='submit'>
-								Login
-							</button>
-						</div>
-						<span className='secondary-txt' onClick={guestUserHandler}>
-							Guest User
-						</span>
-						<Link
-							className='btn-sec'
-							to='/signup'
-							state={{ from: location.state?.from }}>
-							<span className='secondary-txt'>Create an account &gt;</span>
-						</Link>
-					</form>
-				</div>
+	return (
+		<main className='login-form'>
+			<div className='login-header'>
+				<h1 aria-hidden='true'>LOGIN</h1>
+				<p className='error-msg'>{error?.errors}</p>
 			</div>
+			<form className='input-form' onSubmit={handleSubmit}>
+				<div className='form-fields'>
+					<input
+						name='email'
+						type='email'
+						placeholder='E-mail'
+						value={formInfo.email}
+						onChange={handleChange}
+						required
+					/>
+				</div>
+				<div className='form-fields'>
+					<input
+						name='password'
+						type='password'
+						minLength={8}
+						placeholder='Password'
+						value={formInfo.password}
+						onChange={handleChange}
+						autoComplete='none'
+						required
+					/>
+				</div>
+				<div className='input-buttons'>
+					<button className='button button-login' type='submit'>
+						Login
+					</button>
+				</div>
+				<div className='input-buttons'>
+					<button className='button button-guest' onClick={guestUserHandler}>
+						Guest User
+					</button>
+				</div>
+				<Link
+					className='btn-sec'
+					to='/signup'
+					state={{ from: location.state?.from }}>
+					<span className='secondary-txt'>Create new account {"->"} </span>
+				</Link>
+			</form>
 		</main>
 	);
 };

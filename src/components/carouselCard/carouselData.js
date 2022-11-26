@@ -4,4 +4,5 @@ export const carouselData = [
 	"https://res.cloudinary.com/dark-ether/image/upload/v1661269924/Xero/FKgazVvG7BcWouCr39mIiXkW_tc8mju.jpg",
 	"https://res.cloudinary.com/dark-ether/image/upload/v1661269949/Xero/eQVuMWucUXgz0WZpFyQVjFQc_hxaan7.jpg",
 	"https://res.cloudinary.com/dark-ether/image/upload/v1661269386/Xero/TQKAd8U6hnIFQIIcz6qnFh8C_w946na.jpg",
+	"https://res.cloudinary.com/dark-ether/image/upload/v1661267793/Xero/xmKUnAOenEAKspB3FlOg80aQZfEoCYcE_y6lt5u.jpg",
 ];

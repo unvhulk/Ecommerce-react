@@ -1,4 +1,5 @@
 import { useFilter } from "contexts";
+import "./filter.css";
 
 export const Filter = () => {
 	const {
@@ -12,19 +13,22 @@ export const Filter = () => {
 		setSort,
 		resetFilters,
 	} = useFilter();
+
 	const ToggleCategory = (e) => {
 		const { name, checked } = e.target;
 		setCategoryFilter({ ...categoriesFilter, [name]: checked });
 	};
+
 	const RatingsCategory = (e) => {
 		setRatings(e.target.value);
 	};
+
 	const SortCategory = (e) => {
 		setSort(e.target.value);
 	};
 
 	return (
-		<aside className='position-fixed sidebar-flex'>
+		<aside className='position-fixed sidebar-flex filter-container'>
 			<div className='sidebar-header'>
 				<h2 className='margin'>Filters</h2>
 				<p className='margin' onClick={resetFilters}>

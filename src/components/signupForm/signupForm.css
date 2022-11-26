@@ -1,16 +1,24 @@
 .Signup-form-con {
 	display: grid;
-	grid-template-rows: 15% 85%;
-	height: 58rem;
-	width: 40rem;
-	background-color: var(--BACKGROUND-BODY-COLOR);
+	grid-template-rows: 20% 80%;
+	grid-template-columns: 1fr;
+	background-color: var(--BACKGROUND-BODY-COLOR-DARK);
+	height: 90vh;
+	width: 100%;
 }
-.input-form {
-	height: 100%;
+
+.signup-header {
+	padding-top: 5rem;
+	display: grid;
+	justify-content: center;
+	align-items: center;
 }
-.input-form > input {
-	width: 36rem;
+
+.signup-header > h1 {
+	display: grid;
+	justify-self: center;
 }
+
 .signup-fields {
 	display: grid;
 	grid-template-rows: auto;

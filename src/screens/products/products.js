@@ -1,8 +1,11 @@
 import { Filter, ProductCard } from "components";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSearch, useFilter } from "contexts";
+import "./products.css";
+
 export const Products = () => {
 	const [data, setData] = useState([]);
+	const length = useRef(0);
 	const [fetchedData, setFetchedData] = useState([]);
 	const { searchText } = useSearch();
 	const { categoriesFilter, priceSlider, ratings, sort } = useFilter();
@@ -41,48 +44,89 @@ export const Products = () => {
 		}
 	};
 
+	length.current = fetchedData
+		?.sort((a, b) => {
+			if (sort === "") {
+				return a.id - b.id;
+			} else if (sort === "high-to-low") {
+				return b.price - a.price;
+			} else if (sort === "low-to-high") {
+				return a.price - b.price;
+			}
+			return 0;
+		})
+		.filter((item) => {
+			if (item.rating >= ratings) return item;
+			return 0;
+		})
+		.filter((item) => {
+			if (item.price <= priceSlider) {
+				return item;
+			}
+			return 0;
+		})
+		.filter((item) => {
+			if (searchText === "") return item;
+			else if (item.title.toLowerCase().includes(searchText.toLowerCase()))
+				return item;
+			return 0;
+		})
+		.map((products) => {
+			// length.current += 1;
+			return <ProductCard product={products} key={products._id} />;
+		}).length;
+
 	return (
 		<>
 			<main className='main-container'>
 				<Filter />
-				<div className='component-display-container prod'>
-					<h1>Showing all products</h1>
-					<h3>Showing {fetchedData?.length} products</h3>
-					<br />
-					<div className='grid-items vertical-cards'>
-						{fetchedData
-							?.sort((a, b) => {
-								if (sort === "") {
-									return a.id - b.id;
-								} else if (sort === "high-to-low") {
-									return b.price - a.price;
-								} else if (sort === "low-to-high") {
-									return a.price - b.price;
-								}
-								return 0;
-							})
-							.filter((item) => {
-								if (item.rating >= ratings) return item;
-								return 0;
-							})
-							.filter((item) => {
-								if (item.price <= priceSlider) {
-									return item;
-								}
-								return 0;
-							})
-							.filter((item) => {
-								if (searchText === "") return item;
-								else if (
-									item.title.toLowerCase().includes(searchText.toLowerCase())
-								)
-									return item;
-								return 0;
-							})
-							.map((products) => {
-								return <ProductCard product={products} key={products._id} />;
-							})}
-					</div>
+				<div className='products-container'>
+					{length.current === 0 ? (
+						<h1>No Products Found</h1>
+					) : (
+						<>
+							<h1>Showing {length.current} products</h1>
+							<br />
+							<div className='grid-items'>
+								{fetchedData
+									?.sort((a, b) => {
+										if (sort === "") {
+											return a.id - b.id;
+										} else if (sort === "high-to-low") {
+											return b.price - a.price;
+										} else if (sort === "low-to-high") {
+											return a.price - b.price;
+										}
+										return 0;
+									})
+									.filter((item) => {
+										if (item.rating >= ratings) return item;
+										return 0;
+									})
+									.filter((item) => {
+										if (item.price <= priceSlider) {
+											return item;
+										}
+										return 0;
+									})
+									.filter((item) => {
+										if (searchText === "") return item;
+										else if (
+											item.title
+												.toLowerCase()
+												.includes(searchText.toLowerCase())
+										)
+											return item;
+										return 0;
+									})
+									.map((products) => {
+										return (
+											<ProductCard product={products} key={products._id} />
+										);
+									})}
+							</div>
+						</>
+					)}
 				</div>
 			</main>
 		</>
